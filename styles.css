@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #ffeb3b;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -58,52 +58,68 @@ button {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #d81b60;
 }
 
-#wishContainer {
+.compliment {
+    margin-bottom: 20px;
+}
+
+#mainText {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#bigText {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+}
+
+#secondaryText {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#moreCompliments {
     margin-top: 20px;
 }
 
-#wishText {
-    font-size: 1.2rem;
-    color: #e91e63;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+#moreCompliments p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #333;
 }
 
 .hidden {
     display: none;
 }
 
-.show {
-    display: block;
-}
-
-#backBtn {
-    margin-top: 20px;
-    background-color: #2196f3;
-}
-
-#backBtn:hover {
-    background-color: #0b7dda;
-}
-
 /* 动画效果 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @keyframes float {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
