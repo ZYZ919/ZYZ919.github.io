@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你是大美女！</title>
+    <title>生日祝福页面</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎉 快来输入名字看看！</h1>
+        <h1>🎉 生日快乐！ 🎂</h1>
         <div class="input-container">
-            <label for="nameInput">请输入名字：</label>
-            <input type="text" id="nameInput" placeholder="她的名字">
-            <button id="submitBtn">送出赞美</button>
+            <label for="nameInput">请输入你的名字：</label>
+            <input type="text" id="nameInput" placeholder="你的名字">
+            <button id="submitBtn">发送祝福</button>
         </div>
-        <div id="complimentContainer" class="hidden">
-            <div class="compliment">
-                <p id="mainText">你知道吗？</p>
-                <p id="bigText">[名字]，你真是个大美女！</p>
-                <p id="secondaryText">你的美丽让人无法忽视！</p>
+        <div id="greetingContainer" class="hidden">
+            <h2 id="greetingText">生日快乐，[名字]！</h2>
+            <div class="wishes">
+               <p>22岁咯~过好当下，未来自会慢慢变好</p>
+               <p>其实可以感觉得到，我们自己能做的决定越来越多了，有时会庆幸，有时会迷失</p>
+               <p>可是都不重要，我们正在慢慢经历，慢慢感受</p>
+               <p>多看一场不同的日出日落，多看一片海，多翻一座山</p>
+               <p>这一年我们交流甚少，没有太多的祝愿，和你分享一下美好的场景，祝你有一个自己想要的人生</p>
+               <p>“二十二岁如云归野，祝你与风涉海赴春宴。”</p>
+
             </div>
-            <button id="moreBtn">点击查看更多夸奖</button>
-            <div id="moreCompliments" class="hidden">
-                <p>你的笑容如阳光般温暖！</p>
-                <p>你的眼睛像星星一样闪亮！</p>
-                <p>你的气质独特而迷人！</p>
-                <button id="backBtn">再夸一次</button>
-            </div>
+            <button id="backBtn">再写一次</button>
         </div>
     </div>
     <script src="script.js"></script>

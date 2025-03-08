@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     const nameInput = document.getElementById('nameInput');
     const submitBtn = document.getElementById('submitBtn');
-    const complimentContainer = document.getElementById('complimentContainer');
-    const bigText = document.getElementById('bigText');
-    const moreBtn = document.getElementById('moreBtn');
+    const greetingContainer = document.getElementById('greetingContainer');
+    const greetingText = document.getElementById('greetingText');
     const backBtn = document.getElementById('backBtn');
-    const moreCompliments = document.getElementById('moreCompliments');
     
     // 添加星星背景
-    createStars(30);
+    createStars(20);
     
     // 提交按钮点击事件
     submitBtn.addEventListener('click', function() {
         const name = nameInput.value.trim();
         if (name) {
-            showCompliment(name);
+            showGreeting(name);
         } else {
-            alert('请输入名字！');
+            alert('请输入你的名字！');
         }
+    });
+    
+    // 返回按钮点击事件
+    backBtn.addEventListener('click', function() {
+        greetingContainer.classList.add('hidden');
+        nameInput.value = '';
+        nameInput.focus();
     });
     
     // 按下回车键提交
@@ -27,28 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 显示更多夸奖
-    moreBtn.addEventListener('click', function() {
-        moreCompliments.classList.remove('hidden');
-        moreBtn.style.display = 'none';
+    // 显示祝福语
+    function showGreeting(name) {
+        greetingText.textContent = `生日快乐，${name}！`;
+        greetingContainer.classList.remove('hidden');
+        nameInput.blur();
         
         // 添加浮动动画
-        moreCompliments.classList.add('float');
-    });
-    
-    // 返回按钮点击事件
-    backBtn.addEventListener('click', function() {
-        complimentContainer.classList.add('hidden');
-        moreCompliments.classList.add('hidden');
-        nameInput.value = '';
-        nameInput.focus();
-    });
-    
-    // 显示赞美内容
-    function showCompliment(name) {
-        bigText.textContent = `${name}，你真是个大美女！`;
-        complimentContainer.classList.remove('hidden');
-        nameInput.blur();
+        setTimeout(function() {
+            greetingContainer.classList.add('float');
+        }, 500);
     }
     
     // 创建星星背景
